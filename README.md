@@ -1,19 +1,8 @@
-# elemui-demo
+#vue 相关内容笔记
 
-## Project setup
-```
-npm install
-```
+ <div id="app">
+    <router-view />
+  </div>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#查看例如 less 插件的版本 npm view less-loader versions
+安装指定版本依赖 npm i less-loader@版本号

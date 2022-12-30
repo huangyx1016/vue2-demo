@@ -1,5 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+	<div class="container">关于页面</div>
 </template>
+
+<script>
+export default {
+	name: '',
+	props: {},
+	components: {},
+	data() {
+		return {};
+	},
+	methods: {},
+	mounted() {},
+	created() {},
+	watch: {},
+	computed: {},
+};
+</script>
+
+<style lang="scss" scoped></style>

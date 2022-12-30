@@ -1,0 +1,75 @@
+@import "./reset.scss";
+
+/*全局主色*/
+/*基础颜色*/
+$color-primary:#097aec;
+
+
+/*Background 背景颜色*/
+/*危险背景颜色*/
+$background-danger:orangered;
+/*编辑背景颜色*/
+$background-edit:#188cff;
+
+
+/*字体文字大小*/
+$font-size-large: 18px;
+/* 小标题文字大小 */
+$font-size-medium: 16px;
+/* 正文文字大小 */
+$font-size-base: 14px;
+/* 正文（小）文字大小 */
+$font-size-small: 13px;
+/* 主要文字粗细 */
+$font-weight-primary: 400;
+/* 次要文字粗细 */
+$font-weight-secondary: 400;
+/* 主要文字加粗 */
+$font-weight-primary-bold: 500;
+
+
+/* 字体背景颜色 */
+$color-view-primary: #94cefb;
+
+
+
+html:root{
+    --color-primary:#{$color-primary};
+    --background-danger:#{$background-danger};
+    --background-edit:#{$background-edit};
+    /*字体文字大小*/
+    --font-size-large: #{$font-size-large};
+    /* 小标题文字大小 */
+    --font-size-medium: #{font-size-medium};
+    /* 正文文字大小 */
+    --font-size-base: #{$font-size-base};
+    /* 正文（小）文字大小 */
+    --font-size-small: #{$font-size-small};
+    /* 主要文字粗细 */
+    --font-weight-primary: #{$font-weight-primary};
+    /* 次要文字粗细 */
+    --font-weight-secondary: #{ $font-weight-secondary};
+    /* 主要文字加粗 */
+    --font-weight-primary-bold: #{$font-weight-primary-bold};
+    --color-view-primary: #{$color-view-primary};
+}
+
+.btn-danger {
+    background-color: var(--background-danger);
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-edit {
+    background-color: var(--background-edit);
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  .ellipse{
+    overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
