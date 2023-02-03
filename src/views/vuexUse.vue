@@ -14,12 +14,13 @@
       >.js文件获取vuex里的getters里的值</el-button
     >
     <el-button @click="updateAgeHandle">点击调用actions里的updateAge</el-button>
+    <button @click="importFn">点击</button>
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
-import { updateUserAge, getVuexGetters } from "./exportFnUse";
+import { updateUserAge, getVuexGetters, testFn } from "./exportFnUse";
 export default {
   name: "",
   props: {},

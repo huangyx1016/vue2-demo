@@ -39,8 +39,8 @@ export default {
       // return count;
       //js reduce()函数 主要用于条件计数
       const x = this.todos.reduce((pre, current) => {
-        console.log("pre" + pre);
-        console.log("current", current);
+        // console.log("pre" + pre);
+        // console.log("current", current);
         return pre + (current.complete ? 1 : 0);
       }, 0);
       return x;

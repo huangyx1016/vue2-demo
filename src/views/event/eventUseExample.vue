@@ -81,6 +81,10 @@
         @change="handleInputChange"
       ></el-input>
     </div>
+
+    <el-button type="primary" @keyup.enter.native="keyUpHandle"
+      >回车登录</el-button
+    >
   </div>
 </template>
 
@@ -125,12 +129,22 @@ export default {
       console.log("keyCode:" + e.keyCode);
       console.log("key:" + e.key);
     },
+    keyUpHandle(e) {
+      console.log("keyUpHandle");
+      console.log("e", e);
+      // if (e.key === "Enter") {
+      //   this.login();
+      // }
+    },
+
     handleInputChange() {
       console.log("输入框失去焦点或者用户按下回车时触发");
     },
   },
   created() {},
-  mounted() {},
+  mounted() {
+    document.addEventListener("keyup", this.keyUpHandle);
+  },
 };
 </script>
 <style lang="scss" scoped>

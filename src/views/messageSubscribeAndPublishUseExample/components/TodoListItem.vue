@@ -9,20 +9,21 @@
           v-model="todoItem.complete"
           @change="selectChecked(todoItem)"
           ><span v-show="!todoItem.isEdit">{{ todoItem.title }}</span>
-          <el-input
+          <!-- <el-input
             type="text"
             v-model="todoItem.title"
             v-show="todoItem.isEdit"
-            @change="handleEditTitleInputChange(todoItem)"
+            @blur="handleEditTitleInputChange(todoItem)"
+            @keyup.enter.native="handleEditTitleInputChange(todoItem)"
             ref="inputTitle"
-          ></el-input>
-          <!-- <el-input
+          ></el-input> -->
+          <input
             type="text"
             :value="todo.title"
             v-show="todo.isEdit"
             @change="handleEditTitleInputChange2(todo, $event)"
             ref="inputTitle"
-          ></el-input> -->
+          />
         </el-checkbox>
         <!-- <el-checkbox :checked="todo.complete" @change="selectChecked(todo)">{{
           todo.title
