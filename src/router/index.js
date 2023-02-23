@@ -204,6 +204,11 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/echartsUseExample", //vue echarts使用
+    name: "echartsUseExample",
+    component: () => import("../views/echartsUseExample/index.vue"),
+  },
 ];
 
 //创建一个路由实例
