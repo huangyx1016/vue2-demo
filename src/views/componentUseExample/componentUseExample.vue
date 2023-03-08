@@ -9,6 +9,9 @@
     <!-- 全局组件 -->
     <hello-com />
     <globalCom />
+    <el-button type="primary" @click="getSchoolComData"
+      >点击获取School子组件里的数据</el-button
+    >
   </div>
 </template>
 
@@ -31,6 +34,7 @@ export default {
         studentName: "张三",
         age: 18,
       },
+      title: "父组件",
     };
   },
   computed: {},
@@ -39,6 +43,9 @@ export default {
     getDom() {
       //   console.log(this.$refs.titleDom); //获取真实DOM元素
       console.log(this.$refs.schoolDom); //获取school组件实例对象 vueComponent
+    },
+    getSchoolComData() {
+      console.log("school子组件的数据", this.$refs.schoolDom.studentComTile);
     },
   },
   created() {},

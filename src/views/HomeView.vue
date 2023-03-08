@@ -241,6 +241,7 @@ export default {
     },
   },
   mounted() {
+    console.log("params", this.$route.params.id);
     this.jsArrAndStringFnTest();
     //export import es6规范
     console.log(exportData); //es6的导出导出  export import

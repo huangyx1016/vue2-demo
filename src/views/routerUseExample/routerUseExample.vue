@@ -31,6 +31,24 @@
         </div>
       </div>
     </div>
+    <router-link :to="`/routerUseExample/Child?id=${id}`"
+      >前往Child组件</router-link
+    >
+    <!-- <router-link
+      :to="{
+        path: '/routerUseExample/Child',
+        params: { key: '1', id: 555 },
+      }"
+      >asdasdasd</router-link -->
+    >
+    <!-- query与path搭配使用 -->
+    <router-link :to="{ path: '/routerUseExample/Child', query: { id: 2 } }"
+      >前往Child组件query</router-link
+    >
+    <!-- params必须与name使用 -->
+    <router-link :to="{ name: 'home', params: { id: 2 } }"
+      >前往Child组件params</router-link
+    >
   </div>
 </template>
 
@@ -46,6 +64,7 @@ export default {
         { id: 2, name: "选项二" },
       ],
       tabIndex: 0,
+      id: 2,
     };
   },
   computed: {},

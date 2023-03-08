@@ -19,7 +19,11 @@ export default {
   watch: {},
   methods: {},
   created() {},
-  mounted() {},
+  mounted() {
+    console.log("child", this.$route);
+    console.log("query", this.$route.query.id);
+    console.log("params", this.$route.params.id);
+  },
 };
 </script>
 <style lang="scss" scoped></style>

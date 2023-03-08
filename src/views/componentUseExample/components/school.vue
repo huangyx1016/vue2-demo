@@ -6,6 +6,7 @@
     <h2>学校地址:{{ myAddress }}</h2>
     <button @click="showName">点击提示学校名</button>
     <button @click="updateAddress">尝试修改props接收的address</button>
+    <button @click="getFatherData">点击获取父组件里的数据</button>
     <StudentCom :title="studentComTile" />
   </div>
 </template>
@@ -45,6 +46,9 @@ export default {
     },
     updateAddress() {
       this.myAddress = "福州市";
+    },
+    getFatherData() {
+      console.log(this.$parent.title);
     },
   },
   created() {},
