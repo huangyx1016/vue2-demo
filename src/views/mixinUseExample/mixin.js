@@ -1,4 +1,7 @@
 export const mixin = {
+  data() {
+    name: "mixin里的name";
+  },
   methods: {
     showName() {
       this.$message.warning(this.name);

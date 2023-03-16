@@ -1,12 +1,16 @@
 <!-- vue set()方法 -->
 <template>
   <div class="container">
+    <h1 class="current-time" :class="{ active: isActived }">
+      {{ currentTime }}
+    </h1>
     <h1>现在是:{{ formateTime }}</h1>
     <h1>学校信息</h1>
     <h2>学校名称：{{ schoolName }}</h2>
     <h2>学校地址:{{ schoolAddress }}</h2>
     <hr />
     <button @click="addSex">点击添加一个student的sex属性</button>
+    <button @click="deleteSex">点击删除一个student的sex属性</button>
     <h1>学生信息</h1>
     <h2>姓名：{{ student.name }}</h2>
     <h2 v-if="student.sex">性别：{{ student.sex }}</h2>
@@ -34,6 +38,8 @@ export default {
         ],
         timer: null,
       },
+      currentTime: "",
+      isActived: false,
     };
   },
   // 局部过滤器
@@ -44,30 +50,46 @@ export default {
     },
   },
   watch: {
-    // currentTime: {
-    //   handler(val) {
-    //     var _this = this;
-    //     setInterval(() => {
-    //       console.log("每秒获取一次当前时间");
-    //       _this.currentTime = _this
-    //         .$dayjs(new Date())
-    //         .format("YYYY-MM-DD HH:mm:ss");
-    //       console.log(_this.currentTime);
-    //     }, 1000);
-    //   },
-    //   //immediate: true,
-    // },
+    currentTime: {
+      handler(val) {
+        // var _this = this;
+        // setInterval(() => {
+        //   console.log("每秒获取一次当前时间");
+        //   _this.currentTime = _this
+        //     .$dayjs(new Date())
+        //     .format("YYYY年-MM月-DD日 HH时:mm分:ss秒");
+        //   console.log(_this.currentTime);
+        // }, 1000);
+        if (val) {
+          this.isActived = !this.isActived;
+        }
+      },
+      immediate: true,
+    },
   },
   methods: {
+    getCurrentTime() {
+      setInterval(() => {
+        console.log("每秒获取一次当前时间");
+        this.currentTime = this.$dayjs(new Date()).format(
+          "YYYY年-MM月-DD日 HH时:mm分:ss秒"
+        );
+        console.log(this.currentTime);
+      }, 1000);
+    },
     addSex() {
       //this.$set();只能给data里的某个对象添加属性不能直接给data追加属性
       //Vue.set( target, propertyName/index, value )=this.$set()
       //向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 this.myObject.newProperty = 'hi')
       this.$set(this.student, "sex", "男");
     },
+    deleteSex() {
+      this.$delete(this.student, "sex");
+    },
   },
   created() {},
   mounted() {
+    this.getCurrentTime();
     //js获取时间戳
     console.log(new Date().getTime(), Date.now());
     var now = this.$moment().format("YYYY-MM-DD HH:mm:ss");
@@ -91,4 +113,14 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.current-time {
+  color: #333;
+  font-size: 25px;
+}
+.active {
+  color: deepskyblue;
+  transition: 0.8s linear;
+  opacity: 1;
+}
+</style>

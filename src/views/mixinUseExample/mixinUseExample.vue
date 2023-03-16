@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <School />
-    <Student />
+    <!-- <Student /> -->
   </div>
 </template>
 

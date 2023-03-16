@@ -73,13 +73,22 @@
     <!-- <el-button type="primary" @click="changHighLight">{{ buttonText }}</el-button>
 		<div :class="[isActive ? 'activeClass' : '']">message</div>
 		<p :style="{ fontSize: fontSize + 'px' }">信息信息信息</p> -->
+
+    <div class="triangle"></div>
+    <!-- <el-button type="primary" @click="testPromise">点击</el-button> -->
   </div>
 </template>
 
 <script>
 //es6导入 import
 import exportData from "./exportUse.js";
-import { testFn, testFn2, toUsePage, showMessage } from "./exportFnUse.js";
+import {
+  testFn,
+  testFn2,
+  toUsePage,
+  showMessage,
+  testPromise,
+} from "./exportFnUse.js";
 import search from "./component-use-example/search.vue";
 import pageination from "./component-use-example/pagination-example.vue";
 import tab from "./component-use-example/tab-example.vue";
@@ -241,6 +250,7 @@ export default {
     },
   },
   mounted() {
+    testPromise();
     console.log("params", this.$route.params.id);
     this.jsArrAndStringFnTest();
     //export import es6规范
@@ -294,6 +304,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.triangle:after {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  content: " ";
+  border-right: 100px solid transparent;
+  border-top: 100px solid deepskyblue;
+  border-left: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  margin-top: 40px;
+}
+
 // table {
 // 	border: 1px solid gray;
 // 	width: 600px;
