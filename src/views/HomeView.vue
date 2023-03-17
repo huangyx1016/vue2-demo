@@ -75,7 +75,6 @@
 		<p :style="{ fontSize: fontSize + 'px' }">信息信息信息</p> -->
 
     <div class="triangle"></div>
-test
     <!-- <el-button type="primary" @click="testPromise">点击</el-button> -->
   </div>
 </template>
