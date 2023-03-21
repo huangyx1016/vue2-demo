@@ -116,7 +116,7 @@ export default {
       isActive: false,
       fontSize: 12,
       buttonText: "点击高亮",
-      count: 0, //数量
+
       form: {
         name: "",
         region: "",
@@ -131,8 +131,8 @@ export default {
     },
     //点击减少数量的按钮
     reduce(index) {
-      console.log(index);
-      console.log(this.goods[index].count);
+      //console.log(index);
+      //console.log(this.goods[index].count);
       if (this.goods[index].count == 1) {
         this.goods[index].count = 1; //库存为1的时候不能再往下减
       } else {
@@ -152,14 +152,14 @@ export default {
       this.goods.splice(index, 1); //删除购物车
     },
     //点击按钮切换高亮效果
-    changHighLight() {
-      this.isActive = !this.isActive; //取反
-      //使用三目表达式来设置buttonText
-      this.isActive ? (this.fontSize = 18) : (this.fontSize = 12);
-      this.isActive
-        ? (this.buttonText = "取消高亮")
-        : (this.buttonText = "点击高亮");
-    },
+    // changHighLight() {
+    //   this.isActive = !this.isActive; //取反
+    //   //使用三目表达式来设置buttonText
+    //   this.isActive ? (this.fontSize = 18) : (this.fontSize = 12);
+    //   this.isActive
+    //     ? (this.buttonText = "取消高亮")
+    //     : (this.buttonText = "点击高亮");
+    // },
     //js的一些常用函数
     jsArrAndStringFnTest() {
       //常用的一些js数组和字符串方法
@@ -174,22 +174,22 @@ export default {
 
       //js map方法 返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。
       let mapArr = this.goods.map((item) => item.price); //这里是返回所有的价格  map方法可以获取数组中的单个属性
-      console.log(higherGoods);
-      console.log(applePhone);
-      console.log(sortArr);
-      console.log(mapArr);
+      // console.log(higherGoods);
+      // console.log(applePhone);
+      // console.log(sortArr);
+      // console.log(mapArr);
 
       //js join方法用于把数组中所有元素转换为一个字符串
       let joinMapArr = mapArr.join(","); //这里是将数组中的所有元素变成用逗号拼接成的字符串
-      console.log(joinMapArr);
+      //console.log(joinMapArr);
 
       //js split方法将字符串根据逗号分割成数组
       let splitMapArr = joinMapArr.split(",");
-      console.log(splitMapArr);
+      //console.log(splitMapArr);
 
       //js reverse方法 数组顺序点到
       let reverseSplitMapArr = splitMapArr.reverse();
-      console.log(reverseSplitMapArr);
+      //console.log(reverseSplitMapArr);
 
       //js pop方法 删除并返回数组的最后一个元素
       // let popReverseSplitMapArr = reverseSplitMapArr.pop();
@@ -207,18 +207,18 @@ export default {
 
       //js slice方法 数组截取从start到end  end不包含 如果知道start不指定end的话会从开始截取到数组结束 start可以为负数表示从数组的倒数第几个元素开始截取
       let sliceReverseSplitMapArr = reverseSplitMapArr.slice(0, 2);
-      console.log(sliceReverseSplitMapArr);
+      //console.log(sliceReverseSplitMapArr);
 
       //js every 数组每个元素是否都满足 some 数组每个元素是否有符合条件
-      console.log(this.goods.every((item) => item.price > 1000)); //返回boolean值
+      //console.log(this.goods.every((item) => item.price > 1000)); //返回boolean值
 
-      console.log(this.goods.some((item) => item.price > 8000)); //返回boolean值
+      //console.log(this.goods.some((item) => item.price > 8000)); //返回boolean值
 
       //forEach循环数组
-      this.goods.forEach((item, index) => {
-        console.log(item);
-        console.log(index);
-      });
+      // this.goods.forEach((item, index) => {
+      //   console.log(item);
+      //   console.log(index);
+      // });
 
       let obj = {
         name: "zhangsan",
@@ -226,22 +226,22 @@ export default {
         city: "厦门",
       };
       // js for in 遍历对象
-      for (let i in obj) {
-        console.log(i); //key (name,age,city)
-        console.log(obj[i]); //value (zhangsan,18,厦门)
-      }
+      // for (let i in obj) {
+      //   console.log(i); //key (name,age,city)
+      //   console.log(obj[i]); //value (zhangsan,18,厦门)
+      // }
 
       //js 截取字符串的方法
       let str = "Hello World";
       //js substring(start,end)方法提取字符串中介于两个指定下标之间的字符。
       //包含开始处得字符不包括结束处的字符 (0,7)相当于[0,7)
-      console.log(str.substring(0, 7)); //Hello  W
+      //console.log(str.substring(0, 7)); //Hello  W
       //js substr(index,howmany) 方法可在字符串中抽取从 开始 下标开始的指定数目的字符。
-      console.log(str.substr(0, 3)); //Hwl
+      //console.log(str.substr(0, 3)); //Hwl
     },
     //点击表单提交
     onSubmit() {
-      console.log("提交");
+      //console.log("提交");
     },
     //点击跳转use路由页面
     toUsePageHandle() {
@@ -250,28 +250,28 @@ export default {
     },
   },
   mounted() {
-    testPromise();
-    console.log("params", this.$route.params.id);
+    //testPromise();
+    // console.log("params", this.$route.params.id);
     this.jsArrAndStringFnTest();
     //export import es6规范
-    console.log(exportData); //es6的导出导出  export import
+    // console.log(exportData); //es6的导出导出  export import
     testFn(); //es6的导出方法  export function
     testFn2();
     //module.exports=   这是commonjs规范 需要使用require引入
     let list = require("./moduleExportUse.js");
-    console.log(list);
+    //console.log(list);
     // this.$store.dispatch(); //vuex用来触发异步的方法 actions里的异步方法 this.$store.dispatch("",参数);
     // this.$store.commit(); //vuex用来触发同步的方法 mutations里的方法 this.$store.commit("",参数);
   },
   //watch属性是不带缓存的 监听属性里面主要写些异步操作
   watch: {
-    buttonText: {
-      //参数 新值,旧值
-      handler(newVal, oldVal) {
-        console.log("new：" + newVal, "old：" + oldVal);
-      },
-      immediate: true, //监听立即执行
-    },
+    // buttonText: {
+    //   //参数 新值,旧值
+    //   handler(newVal, oldVal) {
+    //     console.log("new：" + newVal, "old：" + oldVal);
+    //   },
+    //   immediate: true, //监听立即执行
+    // },
   },
   computed: {
     //计算属性是带缓存的
@@ -295,7 +295,7 @@ export default {
     text() {
       let messageText = "点击高亮";
       this.isActive ? (messageText = "取消高亮") : "点击高亮";
-      console.log(messageText);
+      //console.log(messageText);
       return messageText;
     },
   },

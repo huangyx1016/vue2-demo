@@ -54,16 +54,16 @@ Vue.use(ElementUI);
 //   element.innerHTML = binding.value.toLowerCase();
 // });
 
-Vue.directive("focus", {
-  // bind(element, binding) {},
-  inserted(element, binding) {
-    console.log("自动获取焦点");
-    element.children[0].focus();
-  },
-  // update(element, binding) {
-  //   element.focus();
-  // },
-});
+// Vue.directive("focus", {
+//   // bind(element, binding) {},
+//   inserted(element, binding) {
+//     console.log("自动获取焦点");
+//     element.children[0].focus();
+//   },
+//   // update(element, binding) {
+//   //   element.focus();
+//   // },
+// });
 
 //定义全局子组件
 Vue.component("globalCom", globalCom);

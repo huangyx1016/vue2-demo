@@ -5,10 +5,10 @@ import store from "@/store/index.js"; //引入vuex store仓库
 
 //导出function
 export function testFn() {
-  console.log("测试Fn");
+  // console.log("测试Fn");
 }
 export function testFn2() {
-  console.log("测试Fn2");
+  // console.log("测试Fn2");
 }
 //跳转use路由页面
 export function toUsePage() {

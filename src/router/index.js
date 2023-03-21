@@ -231,6 +231,7 @@ const router = new VueRouter({
     }
   },
 });
+console.log("环境", process.env.BASE_URL);
 
 //重置路由
 // export const routerObj = router();
