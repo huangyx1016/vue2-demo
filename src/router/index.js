@@ -209,6 +209,23 @@ const routes = [
     name: "echartsUseExample",
     component: () => import("../views/echartsUseExample/index.vue"),
   },
+  {
+    path: "/flexBoxLayoutUseExample", //vue 弹性布局均分列
+    name: "flexBoxLayoutUseExample",
+    component: () => import("../views/flexBoxLayoutUseExample/index.vue"),
+  },
+  {
+    path: "/girdUseExample", //gird网格布局
+    name: "girdUseExample",
+    component: () =>
+      import("../views/flexBoxLayoutUseExample/girdUseExample.vue"),
+  },
+  {
+    path: "/selfAdaptionUseExample", //自适应卡片
+    name: "selfAdaptionUseExample",
+    component: () =>
+      import("../views/flexBoxLayoutUseExample/selfAdaptionUseExample.vue"),
+  },
 ];
 
 //创建一个路由实例

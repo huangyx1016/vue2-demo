@@ -9,6 +9,10 @@ Vue.prototype.$moment = moment; //vue实例全局挂载moment方法
 
 import dayjs from "dayjs"; //引入dayjs
 Vue.prototype.$dayjs = dayjs; //vue实例全局挂载dayjs方法
+// import VueI18n from "vue-i18n"; //引入vue国际化插件
+
+// Vue.use(VueI18n);
+import i18n from "./lang/index"; //引入vue国际化插件
 
 import globalCom from "@/views/componentUseExample/components/globalCom.vue";
 
@@ -26,10 +30,11 @@ import globalCom from "@/views/componentUseExample/components/globalCom.vue";
 //引入element ui
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+import locale from "element-ui/lib/locale/lang/en";
 
 //关闭vue的生产提示
 Vue.config.productionTip = false;
-Vue.use(ElementUI);
+Vue.use(ElementUI, { locale });
 
 // //定义全局自定义指令  完整方法
 // Vue.directive("upper-text", {
@@ -71,6 +76,7 @@ Vue.component("globalCom", globalCom);
 new Vue({
   router,
   store,
+  i18n, //挂载到vue实例
   render: (h) => h(App),
   beforeCreate() {
     Vue.prototype.$bus = this; //安装全局事件总线  this就是当前应用的vm

@@ -12,6 +12,7 @@ export default {
       { id: 4, name: "zhaoliu", age: 26 },
     ], //用户列表
     age: 18, //年龄
+    langs: "", //语言
   },
   //主要对state里的变量做一些筛选过滤
   //类似于computed( 当state里的数据需要经过加工后再使用时，并且组件里需要复用,可以用getters加工)
@@ -33,6 +34,9 @@ export default {
     updateUserAge(state, payload) {
       state.age = payload;
     },
+    setLangInfo(state, payload) {
+      state.langs = payload;
+    },
   },
   //异步操作 主要是触发mutations里的方法  如果有一些判断，逻辑就调用actions里的方法
   actions: {
@@ -42,6 +46,9 @@ export default {
     updateAge(context, data) {
       console.log(context);
       console.log(data);
+    },
+    setLangInfo({ commit }, data) {
+      commit("setLangInfo", data);
     },
   },
 };

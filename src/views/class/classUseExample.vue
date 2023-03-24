@@ -10,6 +10,8 @@
       提示信息
     </div>
     <button @click="keepHighLight">切换</button>
+    <!-- 动态class 对象写法 -->
+    <div class="tabs" :class="{ active: isHighLight }"></div>
     <br />
     <el-checkbox
       :indeterminate="isIndeterminateClass"
@@ -24,7 +26,7 @@
     </el-checkbox-group>
     <div class="basic-box" :class="checkClassListArr">提示信息</div>
 
-    <div>
+    <div style="margin-top: 50px">
       <el-checkbox
         :indeterminate="isIndeterminate"
         v-model="checkAll"
@@ -43,7 +45,9 @@
     </div>
 
     <!-- 对象形式  适用于要绑定的样式个数确定、名字确定，但要动态决定用不用-->
-    <div class="basic-box" :class="classObj">提示信息</div>
+    <div class="basic-box" :class="classObj" style="margin-bottom: 50px">
+      提示信息
+    </div>
 
     <!-- 动态style -->
     <div class="basic-box" :style="{ fontSize: fontSize + 'px' }">
@@ -59,6 +63,7 @@ export default {
   components: {},
   data() {
     return {
+      isActived: false,
       mode: "success",
       arr: ["success", "bold", "big"],
       isHighLight: false,
@@ -188,6 +193,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
+  .tabs {
+    width: 50px;
+    height: 50px;
+    background-color: deepskyblue;
+  }
+  .normal {
+    color: rgb(104, 104, 216);
+  }
   .success {
     color: green;
   }
@@ -204,9 +217,12 @@ export default {
     font-size: 24px;
   }
   .hight-light {
-    color: greenyellow;
+    color: skyblue;
     font-size: 30px;
     font-weight: 700;
+  }
+  .active {
+    background-color: skyblue;
   }
 }
 </style>

@@ -1,6 +1,12 @@
 <template>
   <!-- vue简单购物车实例  computed计算属性的使用 计算总价sum-->
-  <div>
+  <div class="container">
+    <div class="wrapper">
+      <div class="lang-box">
+        <changeLang />
+      </div>
+    </div>
+    <p class="title">{{ $t("ModelObj.title") }}</p>
     <!-- <search />
 		<pageination />
 		<tab /> -->
@@ -76,6 +82,7 @@
 
     <div class="triangle"></div>
     <!-- <el-button type="primary" @click="testPromise">点击</el-button> -->
+    <div class="switch-lang-wrap"></div>
   </div>
 </template>
 
@@ -94,11 +101,19 @@ import pageination from "./component-use-example/pagination-example.vue";
 import tab from "./component-use-example/tab-example.vue";
 import bindExample from "./component-use-example/bind-example.vue";
 import navTitleExample from "./component-use-example/navTitle-example.vue";
+import changeLang from "@/components/changeLang.vue";
 
 export default {
   name: "",
   props: {},
-  components: { search, pageination, tab, bindExample, navTitleExample },
+  components: {
+    search,
+    pageination,
+    tab,
+    bindExample,
+    navTitleExample,
+    changeLang,
+  },
   data() {
     return {
       logoImg: require("@/assets/logo.png"),
@@ -304,66 +319,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.triangle:after {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  content: " ";
-  border-right: 100px solid transparent;
-  border-top: 100px solid deepskyblue;
-  border-left: 100px solid transparent;
-  border-bottom: 100px solid transparent;
-  margin-top: 40px;
-}
+.container {
+  .wrapper {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 10px;
+    .lang-box {
+      margin-left: auto;
+    }
+  }
 
-// table {
-// 	border: 1px solid gray;
-// 	width: 600px;
-// 	border-collapse: collapse;
-// }
-// tr {
-// 	height: 35px;
-// 	text-align: center;
-// }
-// .on {
-// 	background: #f5f5f5;
-// }
-// .off {
-// 	background: white;
-// }
-// .activeClass {
-// 	//文字颜色
-// 	color: dodgerblue;
-// }
-// .errorClass {
-// 	color: red;
-// }
-// .bg {
-// 	width: 100px;
-// 	height: 100px;
-// 	//在style样式中vue的background-image的路径可以写成 ~@/assets/logo.png   ~@表示从src的目录开始往下找
-// 	background-image: url(~@/assets/logo.png);
-// 	background-size: cover;
-// 	background-repeat: no-repeat;
-// }
-// .box {
-// 	display: flex;
-// 	flex-direction: row;
-// 	margin: 100px auto;
-// 	width: 400px;
-// 	height: 200px;
-// 	border: 1px solid red;
-// }
-// .inner {
-// 	flex-basis: 200px; //
-// 	height: 100px;
-// 	background: black;
-// 	flex-shrink: 0; //默认值为1  收缩  flex-grow:默认值0 flex:basis:元素所占宽度   flex:1 = flex:0 1 auto; (顺序)flex-grow,flex-shrink,flex-basis
-// }
-// .inner1 {
-// 	flex-basis: 300px; //flex-basis 如果同时设置了flex-basis和width 会取的是flex-basis的值
-// 	height: 100px;
-// 	background: blue;
-// 	flex-shrink: 0;
-// }
+  .triangle:after {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    content: " ";
+    border-right: 100px solid transparent;
+    border-top: 100px solid deepskyblue;
+    border-left: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    margin-top: 40px;
+  }
+
+  // table {
+  // 	border: 1px solid gray;
+  // 	width: 600px;
+  // 	border-collapse: collapse;
+  // }
+  // tr {
+  // 	height: 35px;
+  // 	text-align: center;
+  // }
+  // .on {
+  // 	background: #f5f5f5;
+  // }
+  // .off {
+  // 	background: white;
+  // }
+  // .activeClass {
+  // 	//文字颜色
+  // 	color: dodgerblue;
+  // }
+  // .errorClass {
+  // 	color: red;
+  // }
+  // .bg {
+  // 	width: 100px;
+  // 	height: 100px;
+  // 	//在style样式中vue的background-image的路径可以写成 ~@/assets/logo.png   ~@表示从src的目录开始往下找
+  // 	background-image: url(~@/assets/logo.png);
+  // 	background-size: cover;
+  // 	background-repeat: no-repeat;
+  // }
+  // .box {
+  // 	display: flex;
+  // 	flex-direction: row;
+  // 	margin: 100px auto;
+  // 	width: 400px;
+  // 	height: 200px;
+  // 	border: 1px solid red;
+  // }
+  // .inner {
+  // 	flex-basis: 200px; //
+  // 	height: 100px;
+  // 	background: black;
+  // 	flex-shrink: 0; //默认值为1  收缩  flex-grow:默认值0 flex:basis:元素所占宽度   flex:1 = flex:0 1 auto; (顺序)flex-grow,flex-shrink,flex-basis
+  // }
+  // .inner1 {
+  // 	flex-basis: 300px; //flex-basis 如果同时设置了flex-basis和width 会取的是flex-basis的值
+  // 	height: 100px;
+  // 	background: blue;
+  // 	flex-shrink: 0;
+  // }
+}
 </style>
