@@ -47,12 +47,13 @@ export default {
     console.log("beforeRouteEnter");
     if (to.meta.isAuth) {
       //判断是否需要进行权限效验
-      if (localStorage.getItem("school") === "xxx") {
-        next();
-      } else {
-        //消息提示
-        this.$message.warning("您没有该权限");
-      }
+      // if (localStorage.getItem("school") === "xxx") {
+      //   next();
+      // } else {
+      //   //消息提示
+      //   this.$message.warning("您没有该权限");
+      // }
+      next();
     }
   },
   //通过路由规则，离开该组件时被调用

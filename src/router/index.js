@@ -226,6 +226,21 @@ const routes = [
     component: () =>
       import("../views/flexBoxLayoutUseExample/selfAdaptionUseExample.vue"),
   },
+  {
+    path: "/formUseExample", //表单
+    name: "formUseExample",
+    component: () => import("../views/formUseExample/index.vue"),
+  },
+  {
+    path: "/formUseExample1", //表单
+    name: "formUseExample1",
+    component: () => import("../views/formUseExample/formUseExample1.vue"),
+  },
+  {
+    path: "/formUseExample2", //表单
+    name: "formUseExample2",
+    component: () => import("../views/formUseExample/formUseExample2.vue"),
+  },
 ];
 
 //创建一个路由实例
