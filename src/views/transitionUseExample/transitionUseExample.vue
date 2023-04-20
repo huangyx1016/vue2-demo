@@ -16,23 +16,23 @@
     </transition>
 
     <!-- transition-group多个元素过渡 -->
-    <ul class="list-ul">
+    <!-- <ul class="list-ul">
       <transition-group name="fade" :appear="true">
         <li v-for="item in listData" :key="item.id" v-show="item.show">
           {{ item.name }}<button @click="item.show = !item.show">toggle</button>
         </li>
       </transition-group>
-    </ul>
+    </ul> -->
 
     <!-- 结合animate.css库   https://animate.style/-->
-    <transition
+    <!-- <transition
       name="animate__animated animate__bounce"
       enter-active-class="animate__swing"
       leave-active-class="animate__backOutUp"
       :appear="true"
     >
       <h1 class="content-text-transition" v-show="isShow">显示内容</h1>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -87,7 +87,7 @@ export default {
 
   @keyframes animate {
     from {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
     to {
       transform: translateX(0px);

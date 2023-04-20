@@ -64,6 +64,7 @@ export default {
 }
 .grid-container {
   width: 100%;
+  box-sizing: border-box;
   height: auto;
   /* 使用grid布局*/
   display: grid;

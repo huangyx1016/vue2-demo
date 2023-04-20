@@ -6,6 +6,9 @@
         <changeLang />
       </div>
     </div>
+    <div class="box1">
+      <div class="box2"></div>
+    </div>
     <p class="title">{{ $t("ModelObj.title") }}</p>
     <!-- <search />
 		<pageination />
@@ -320,6 +323,17 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  .box1 {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: skyblue;
+    .box2 {
+      width: 200px;
+      height: 40px;
+      background-color: red;
+    }
+  }
   .wrapper {
     display: flex;
     box-sizing: border-box;

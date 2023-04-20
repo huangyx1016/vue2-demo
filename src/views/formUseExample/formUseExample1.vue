@@ -68,7 +68,8 @@
       center
       class="commonDialog"
       :close-on-click-modal="loading"
-      :before-close="beforeCloseDialog"
+      @close="beforeCloseDialog"
+      ref="dialogRef"
     >
       <el-form
         ref="dialogForm"
@@ -199,6 +200,7 @@ export default {
     //点击打开新增弹窗
     handleAddDialogForm() {
       this.dialogFormVisible = true;
+      this.dialogTitle = "新增";
       // this.dialogForm.name = "张三";
       // this.dialogForm.age = 18;
     },
@@ -226,29 +228,30 @@ export default {
     },
     closeDialogForm() {
       this.dialogFormVisible = false;
-      //   this.$refs.dialogForm.resetFields();
-      //   this.dialogFormVisible = false;
-      //   console.log(this.dialogForm);
     },
     //@close Dialog 关闭的回调
-    // handleCloseDialog() {
-    //   this.$refs.dialogForm.resetFields();
-    //   this.dialogFormVisible = false;
-    //   console.log(this.dialogForm);
-    // },
+    handleCloseDialog() {
+      this.resetDialogForm();
+      this.dialogFormVisible = false;
+      console.log(this.dialogForm);
+    },
 
     //:before-close
     beforeCloseDialog() {
+      console.log("dialog销毁前");
       this.$refs.dialogForm.resetFields();
+      // this.resetDialogForm();
       this.dialogFormVisible = false;
       console.log(this.dialogForm);
     },
     resetDialogForm() {
-      this.$refs.dialogForm.resetFields(); //重置表单
-      this.dialogForm = {
-        name: "",
-        age: null,
-      };
+      this.$nextTick(() => {
+        this.$refs.dialogForm.resetFields(); //重置表单
+        this.dialogForm = {
+          name: "",
+          age: null,
+        };
+      });
     },
   },
   created() {},

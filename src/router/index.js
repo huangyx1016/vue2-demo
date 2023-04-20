@@ -22,7 +22,8 @@ const routes = [
   {
     path: "/commonUseExample", //vue 公共组件使用
     name: "commonUseExample",
-    component: () => import("../views/component-use-example/tab-example.vue"),
+    component: () =>
+      import("../views/component-use-example/pagination-example.vue"),
     meta: { isAuth: true },
     //独享路由守卫   (独享路由守卫只有前置没有后置)
     //独享路由守卫可以和全局后置守卫配合来用
@@ -241,6 +242,11 @@ const routes = [
     name: "formUseExample2",
     component: () => import("../views/formUseExample/formUseExample2.vue"),
   },
+  {
+    path: "/testFormDialogUseExample",
+    name: "testFormDialogUseExample",
+    component: () => import("../views/testFormDialogUseExample/index.vue"),
+  },
 ];
 
 //创建一个路由实例
@@ -252,18 +258,18 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior(to, from, savedPosition) {
-    console.log(savedPosition);
-    console.log(to, from);
+    //console.log(savedPosition);
+    //console.log(to, from);
     if (savedPosition) {
-      console.log("savedPosition存在");
+      // console.log("savedPosition存在");
       return savedPosition;
     } else {
-      console.log("savedPosition不存在");
+      // console.log("savedPosition不存在");
       return { x: 0, y: 0 };
     }
   },
 });
-console.log("环境", process.env.BASE_URL);
+// console.log("环境", process.env.BASE_URL);
 
 //重置路由
 // export const routerObj = router();
